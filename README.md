@@ -2,7 +2,7 @@
 
 A simple backend application built with:
 - Node with Express
-- MongoDB (Integrate with MongoDB Atlas)
+- MongoDB
 - Swagger UI Express
 
 ###
