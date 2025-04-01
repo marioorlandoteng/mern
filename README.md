@@ -4,6 +4,8 @@ A simple backend application built with:
 - Node with Express
 - MongoDB (Integrate with MongoDB Atlas)
 
+![swagger](swagger.png)
+
 ## Getting Started
 
 To get started, clone this repository and run `npm install` to install the dependencies. Then, run `node index.js` to start the development server.

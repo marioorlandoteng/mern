@@ -4,6 +4,7 @@ const userRoute = require('./routes/userRoute');
 const loggingMiddleware = require('./middleware/loggingMiddleware');
 const errorHandler = require('./middleware/errorMiddleware');
 require('dotenv').config();
+const { swaggerUi, specs } = require('./swagger');
 
 const app = express();
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1/user'
@@ -23,6 +24,10 @@ if (process.env.NODE_ENV !== 'test') {
 
 // Routes
 app.use('/user', userRoute);
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
+app.get('/', (req, res) => {
+  res.send('Hello from Express + Swagger! 🚀');
+});
 
 // Error handling middleware (must be last!)
 app.use(errorHandler);
@@ -31,6 +36,7 @@ app.use(errorHandler);
 if (process.env.NODE_ENV !== 'test') {
     app.listen(PORT, () => {
         console.log(`Server is running on port ${PORT}`);
+        console.log(`Swagger docs can be accessed from /api-docs`);
     });
 }
 
