@@ -30,7 +30,7 @@ const ValidationError = require('../errors/ValidationError');
 *                 type: object
 *                 properties:
 *                   id:
-*                     type: integer
+*                     type: string
 *                     example: 1
 *                   name:
 *                     type: string
@@ -55,7 +55,7 @@ router.get('/', catchAsync(async (req, res) => {
  *         name: id
  *         required: true
  *         schema:
- *           type: integer
+ *           type: string
  *         description: The user ID
  *     responses:
  *       200:
@@ -66,7 +66,7 @@ router.get('/', catchAsync(async (req, res) => {
  *               type: object
  *               properties:
  *                 id:
- *                   type: integer
+ *                   type: string
  *                   example: 1
  *                 name:
  *                   type: string
@@ -113,7 +113,7 @@ router.get('/:id', catchAsync(async (req, res) => {
  *               type: object
  *               properties:
  *                 id:
- *                   type: integer
+ *                   type: string
  *                   example: 2
  *                 name:
  *                   type: string
@@ -144,7 +144,7 @@ router.post('/', catchAsync(async (req, res) => {
  *         name: id
  *         required: true
  *         schema:
- *           type: integer
+ *           type: string
  *         description: The user ID
  *     requestBody:
  *       required: true
@@ -168,7 +168,7 @@ router.post('/', catchAsync(async (req, res) => {
  *               type: object
  *               properties:
  *                 id:
- *                   type: integer
+ *                   type: string
  *                   example: 1
  *                 name:
  *                   type: string
@@ -202,7 +202,7 @@ router.put('/:id', catchAsync(async (req, res) => {
  *         name: id
  *         required: true
  *         schema:
- *           type: integer
+ *           type: string
  *         description: The user ID
  *     responses:
  *       204:
