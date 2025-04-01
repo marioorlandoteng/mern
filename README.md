@@ -3,6 +3,11 @@
 A simple backend application built with:
 - Node with Express
 - MongoDB (Integrate with MongoDB Atlas)
+- Swagger UI Express
+
+###
+
+Swagger link https://mern-be-smoky.vercel.app/api-docs/
 
 ![swagger](swagger.png)
 

@@ -9,6 +9,7 @@ const { swaggerUi, specs } = require('./swagger');
 const app = express();
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1/user'
 const PORT = process.env.PORT || 3000;
+const CSS_URL = "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css"
 
 // Middleware
 app.use(express.json());  // For parsing application/json
@@ -24,7 +25,10 @@ if (process.env.NODE_ENV !== 'test') {
 
 // Routes
 app.use('/user', userRoute);
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs, {
+    customCss: '.swagger-ui .opblock .opblock-summary-path-description-wrapper { align-items: center; display: flex; flex-wrap: wrap; gap: 0 10px; padding: 0 10px; width: 100%; }',
+    customCssUrl: CSS_URL
+}));
 app.get('/', (req, res) => {
   res.send('Hello from Express + Swagger! 🚀');
 });
@@ -36,7 +40,6 @@ app.use(errorHandler);
 if (process.env.NODE_ENV !== 'test') {
     app.listen(PORT, () => {
         console.log(`Server is running on port ${PORT}`);
-        console.log(`Swagger docs can be accessed from /api-docs`);
     });
 }
 
