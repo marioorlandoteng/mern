@@ -18,17 +18,17 @@ To get started, clone this repository and run `npm install` to install the depen
 
 To open swagger UI you can go to `http://localhost:3000/api-docs/`
 
-### Testing
+## Database
+
+The database using MongoDB. Database name is `user`.
+
+## Testing
 
 This applciation use Jest, implemented two kind of test:
 - Unit test can be found in folder `tests/unit`
 - Integration test can be found in folder `tests/integration`
 
 To test run `npm test`
-
-## Database
-
-The database using MongoDB. Database name is `user`.
 
 ## Live Application
 
